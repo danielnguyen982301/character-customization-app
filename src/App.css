@@ -1,38 +1,253 @@
-.App {
-  text-align: center;
+:root {
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+body {
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  background: grey;
+}
+
+.option-container .subpart-list img {
+  width: 65px;
+  height: 65px;
+  background: #99bfe0;
+  margin: 10px;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.option-container .subpart-container .subpart-list {
+  position: absolute;
+  top: 30%;
+}
+
+.app-container {
+  display: flex;
+  background: rgba(103, 166, 219, 0.915);
+  justify-content: center;
+  align-items: center;
+  height: 600px;
+  border-radius: 20px;
+}
+
+.btn-group {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 100%;
+  align-items: flex-end;
+  min-width: 200px;
+}
+
+.btn-group button {
+  font-size: 1.4rem;
+  height: 15%;
+  border-radius: 10px;
+  cursor: pointer;
+  width: 140px;
+  font-weight: bold;
+}
+
+.btn-group button:hover {
+  background: cyan;
+}
+
+.btn-group .btn-clicked {
+  background: yellow;
+  color: red;
+  width: 100%;
+  font-size: 1.5rem;
+}
+
+.option-container {
+  background: rgba(215, 103, 219, 0.559);
+  width: 425px;
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.option-clicked {
+  border: 3px dashed;
+}
+
+.subpart-container {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+.subpart {
+  position: absolute;
+  font-size: 1.3rem;
+  font-weight: bold;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 50%;
+}
+
+.avatar {
+  position: relative;
+  margin: 0 20px;
+  width: 150px;
+  height: 150px;
+  background: white;
+  border-radius: 15px;
+}
+
+.avatar .subpart-list {
+  position: absolute;
+  top: 0;
+}
+
+.avatar img {
+  width: 150px;
+  height: 150px;
+}
+
+.avatar .body {
+  z-index: 0;
+}
+
+.avatar .inner {
+  z-index: 1;
+}
+
+.avatar .middle {
+  z-index: 2;
+}
+
+.avatar .outer {
+  z-index: 3;
+}
+
+.avatar .nose,
+.avatar .mouths,
+.avatar .eyes,
+.avatar .eyebrows {
+  z-index: 4;
+}
+
+.avatar .facial,
+.avatar .hair {
+  z-index: 5;
+}
+
+.avatar .earrings,
+.avatar .glasses,
+.avatar .hats,
+.avatar .neckwear {
+  z-index: 6;
+}
+
+.random-btn {
+  margin: 10px;
+  align-self: center;
+}
+
+.random-btn button {
+  font-size: 1.1rem;
+  border: none;
+  background: purple;
+  color: white;
+  cursor: pointer;
+  height: 30px;
+  border-radius: 50%;
+  font-weight: bold;
+}
+
+.random-btn button:hover {
+  background: cyan;
+  color: red;
+}
+
+.avatar-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.mainpart-container {
+  height: 100%;
+  width: 100%;
+}
+
+.body {
+  align-self: center;
+}
+
+.subpart-name {
+  color: brown;
+  background: rgb(255, 192, 245);
+}
+
+.next,
+.prev {
+  cursor: pointer;
+}
+
+.next:hover,
+.prev:hover {
+  background: black;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.page-btn {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media screen and (max-width: 540px) {
+  .app-container {
+    flex-direction: column;
   }
-  to {
-    transform: rotate(360deg);
+
+  .btn-group {
+    display: grid;
+    grid-template-columns: auto auto;
+    min-height: 50px;
+    width: 100%;
+    height: auto;
+    min-width: 0;
+  }
+
+  .btn-group button {
+    font-size: 1rem;
+    height: auto;
+    width: 120px;
+  }
+
+  .btn-group .btn-clicked {
+    height: 100%;
+    width: 120px;
+    font-size: 1.1rem;
+  }
+
+  .option-container .subpart-list img {
+    width: 40px;
+    height: 40px;
+    margin: 5px;
+  }
+
+  .option-container {
+    background: rgba(215, 103, 219, 0.559);
+    width: 360px;
+    height: 100%;
   }
 }
